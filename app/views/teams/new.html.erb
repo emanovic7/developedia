@@ -1,0 +1,13 @@
+<h1>Assign Developers to Project</h1>
+
+<%= form_for @team do |f|%>
+
+<%= f.label :project_id %>
+<%= f.collection_select :project_id, @projects, :id, :name %>
+
+<%= f.label :developer_id %>
+<%= f.collection_select :developer_id, @developers, :id, :name %>
+
+<%= f.submit "CREATE" %>
+
+<% end %>
