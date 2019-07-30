@@ -1,0 +1,2 @@
+class Skillset < ApplicationRecord
+end
