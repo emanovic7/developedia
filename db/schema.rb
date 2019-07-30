@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_202511) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_202511) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
