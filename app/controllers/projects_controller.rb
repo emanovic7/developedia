@@ -14,7 +14,8 @@ before_action :find_project, only: [:show, :edit, :update, :destroy]
       end
 
       def create
-        @project.create(project_params)
+        @project = Project.create(project_params)
+        # byebug
         if @project.valid?
           redirect_to project_path(@project)
         else

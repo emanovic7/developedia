@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     if @user.valid?
       @user.create(user_params)
       redirect_to user_path(@user)
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  
+
 
   private
     def set_user

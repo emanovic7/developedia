@@ -17,7 +17,7 @@ class TeamsController < ApplicationController
 
         def create
           @projects = Project.all
-          @team.create(team_params)
+          @team = Team.create(team_params)
           if @team.valid?
             redirect_to projects_path
           else
