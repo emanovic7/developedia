@@ -1,0 +1,9 @@
+
+
+<%= form_for @skillset do |f| %>
+  <%= f.label :skill %>
+  <%= f.collection_select :skill_id,  @skills, :id, :name %><br />
+
+
+  <%= f.submit %>
+<% end %>

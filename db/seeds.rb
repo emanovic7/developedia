@@ -13,4 +13,21 @@
   Developer.create(name: Faker::Name.name, location: Faker::WorldCup.city)
 end
 
-"done seeding :)"
+[
+  "python",
+  "java",
+  "ruby",
+  "ruby on rails",
+  "objective-c",
+  "c++",
+  "javacript",
+  "c#",
+  "C language",
+  "PHP",
+  "SQL",
+  "swift"
+].each do |language|
+  Skill.create(name: language)
+end
+
+puts "done seeding :)"

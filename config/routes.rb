@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+
   # get "/login", to: 'login#new'
   # post "/login", to: 'login#create'
-  resources :login, only: [:new, :create]
+  #resources :login, only: [:new, :create]
   get "/login", to: 'login#new', as: "login"
   post "/login", to: 'login#create'
   delete "/logout", to: 'login#destroy'
