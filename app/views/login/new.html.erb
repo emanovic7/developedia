@@ -1,0 +1,15 @@
+<h1 align="center">Login to your account</h1>
+
+
+<%= form_tag "/login" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br />
+
+  <%= label_tag :password %>
+  <%= text_field_tag :password %><br />
+
+  <%= label_tag :password_digest %>
+  <%= text_field_tag :password_digest %><br />
+
+  <%= submit_tag "login" %>
+<% end %>
