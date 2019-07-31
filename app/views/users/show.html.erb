@@ -1,1 +1,20 @@
-<h1 align="center"></h1>
+<h1 align="center"><%= @user.name %></h1>
+
+
+<center>
+  <% if @user.projects.count == 0 %>
+    <p>You have no projects with us at the moment</p>
+    <p><%= link_to "create a project", new_project_path %></p>
+  <% else %>
+    <h3>These are the projects you have so far</h3>
+      <% @user.projects.each do |project| %>
+        <%= project.name %>
+      <% end %>
+  <% end %>
+
+  <%= link_to "See all Developers", developers_path %>
+
+
+<p><%= button_to "logout", "/logout", method: :delete %></p>
+
+</center>
