@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-
-before_action :find_project, only: [:show, :edit, :update, :destroy]
+  before_action :authorized, only: [:index, :create, :destroy]
+  before_action :find_project, only: [:show, :edit, :update, :destroy]
 
       def index
         @projects = Project.all
@@ -11,16 +11,22 @@ before_action :find_project, only: [:show, :edit, :update, :destroy]
 
       def new
         @project = Project.new
+        @developers = Developer.all
       end
 
       def create
-        @project = Project.create(project_params)
-        # byebug
-        if @project.valid?
-          redirect_to project_path(@project)
+        if @current_user
+          @project = @current_user.projects.create(project_params)
+
+          if @project.valid?
+            redirect_to user_path(@current_user)
+          else
+            flash[:errors] = @project.errors.full_messages
+            redirect_to new_project_path
+          end
         else
-          flash[:errors] = @project.errors.full_messages
-          redirect_to new_project_path
+          flash["message"] = "Please create account first"
+          redirect_to new_login_path
         end
       end
 
@@ -50,7 +56,7 @@ before_action :find_project, only: [:show, :edit, :update, :destroy]
       end
 
       def project_params
-        params.require(:project).permit(:name)
+        params.require(:project).permit(:name, :user_id)
       end
 
 end

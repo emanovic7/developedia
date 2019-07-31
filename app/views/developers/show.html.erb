@@ -1,3 +1,10 @@
-<h1><%= @developer.name %></h1>
+<h1>Name: <%= @developer.name %></h1>
 
-<h3><%= @developer.location %></h3>
+<h3>Location: <%= @developer.location %></h3>
+
+<h3>Skills</h3>
+
+<p><%= link_to "add skill", new_skill_path %></p>
+
+
+<p><%= link_to "home", user_path(@current_user) %></p>

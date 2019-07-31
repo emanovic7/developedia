@@ -1,5 +1,7 @@
 <h1 align="center">Developers</h1>
 
-<% @developers.each do |developer| %>
-<%= link_to developer.name, developer %>
-<% end %>
+<ol>
+  <% @developers.each do |developer| %>
+    <li><%= link_to developer.name, developer %></li>
+  <% end %>
+</ol>

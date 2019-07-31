@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
         end
 
         def new
-          @projects = Project.all
+          @projects = @current_user.projects.all
           @developers = Developer.all
           @team = Team.new
         end

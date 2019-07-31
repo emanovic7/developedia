@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def set_auth_variables
     @user_id = session[:user_id]
-    @logged_in = !!@user
+    @logged_in = !!@user_id
     if @logged_in
       @current_user = User.find(@user_id)
     end
