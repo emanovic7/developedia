@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # post "/login", to: 'login#create'
   #resources :login, only: [:new, :create]
   get "/login", to: 'login#new', as: "login"
+  resources :login, only: [:new, :create]
   post "/login", to: 'login#create'
   delete "/logout", to: 'login#destroy'
   get "/register", to: 'users#new', as: "register"

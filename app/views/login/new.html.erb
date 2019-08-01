@@ -1,12 +1,33 @@
-<h1 align="center">Login to your account</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="main">
+
+  <div class="gradient">
+    <div class="loginbox">
+      <h3>Wellcome to Developedia</h3>
+      <h5>Log In</h5>
+      <img src="" alt="">
+      <%= form_tag "/login" do %>
+      <%= text_field_tag :name %><br />
+        <br>
+        <%= password_field_tag :password %><br>
+        <br>
+        <button type="button" class="btn btn-outline-warning"><%= submit_tag "Log In" %></button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="picture"></div>
+</div>
 
 
-<%= form_tag "/login" do %>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %><br />
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password %><br />
-
-  <%= submit_tag "login" %>
-<% end %>
+</body>
+</html>

@@ -1,3 +1,23 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+  background-image: url(https://i.pinimg.com/originals/b7/46/43/b74643cbbe7d68c54554544ec50cf999.jpg);
+  background-size: cover;
+  filter: blur();
+}
+
+.box {
+  background-color: grey;
+  padding: 5px;
+  height: 680px;
+  width: 300px;
+  text-align: center;
+  margin: 5px auto;
+  overflow-y: scroll;
+}
+
+.grid-item {
+  border-color: white;
+}

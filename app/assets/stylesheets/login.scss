@@ -1,3 +1,44 @@
 // Place all the styles related to the login controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3 {
+color: white;
+}
+
+h5 {
+color: white;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.gradient {
+  background-image: linear-gradient(to bottom right, purple, yellow);
+  height: 700px;
+  width: 50%;
+  background-color: green;
+}
+
+.picture {
+  background-image: url(https://i.pinimg.com/originals/e2/a1/71/e2a171ac91a1435c76a839b1510473c5.gif),
+  url(https://data.whicdn.com/images/202020054/original.gif);
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  height: 700px;
+  width: 50%;
+  background-color: pink;
+  background-size: cover;
+}
+
+.loginbox {
+  background-color: purple;
+  padding: 10px;
+  height: 400px;
+  width: 300px;
+  text-align: center;
+  margin: 100px auto 100px;
+}
