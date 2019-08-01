@@ -9,7 +9,7 @@
 
 <body>
   <div class="main">
-    <div class="box">
+    <div class="box_new_project">
 
 <% if flash[:errors] %>
 <ul>
@@ -20,9 +20,9 @@
 <% end %>
 
 <%= form_for @project do |f|%>
-  <%= f.label :name %>
+  <%= f.label :name %><br>
   <%= f.text_field :name %><br />
-
+  <br>
   <%= f.submit %>
 <% end %>
 
