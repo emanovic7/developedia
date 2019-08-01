@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   before_action :set_auth_variables
 
+
+  def home
+    render "users/root"
+  end
+
   def set_auth_variables
     @user_id = session[:user_id]
     @logged_in = !!@user_id

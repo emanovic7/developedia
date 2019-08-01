@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
       def index
-        @projects = Project.all
+        @projects = @current_user.projects.all
       end
 
       def show
@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
           @project = @current_user.projects.create(project_params)
 
           if @project.valid?
-            redirect_to user_path(@current_user)
+            redirect_to project_path(@project)
           else
             flash[:errors] = @project.errors.full_messages
             redirect_to new_project_path
@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
       end
 
       def edit
+        
       end
 
       def update

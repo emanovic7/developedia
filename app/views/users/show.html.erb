@@ -10,6 +10,7 @@
         <p><%= link_to project.name, project_path(project) %></p>
       <% end %>
   <% end %>
+</center>
 
   <p><%= link_to "create a project", new_project_path %></p>
 
@@ -17,5 +18,3 @@
 
 
 <p><%= button_to "logout", "/logout", method: :delete %></p>
-
-</center>

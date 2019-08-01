@@ -1,5 +1,10 @@
-<h1>Projects</h1>
+<h2 align="center">Projects for <%= link_to @current_user.name, user_path(@current_user) %></h2>
 
-<% @projects.each do |project| %>
-<%= project.name %>
-<% end %>
+<ul>
+  <% @projects.each do |project| %>
+    <li><%=link_to project.name, project_path(project) %></li>
+  <% end %>
+</ul>
+
+
+<p align="center"><%= link_to "add another project", new_project_path %></p>

@@ -1,15 +1,35 @@
-<h1>This is <%= @project.name %></h1>
+<h1 align="center"><%= @project.name %></h1>
 
+<center>
+  <p> owner: <%= link_to @project.user.name, user_path(@project.user) %></p>
+  <%= link_to "udpate this project", edit_project_path(@project) %><br />
+</center>
 
-<p> owned by: <%= link_to @project.user.name, user_path(@project.user) %></p>
-
+<br /><br />
 <% if @project.developers.count != 0 %>
 <ol>
   <h3>Developers working on this Project:</h3>
   <% @project.developers.each do |developer| %>
-    <li><%= link_to developer.name, developer_path(developer) %></li>
+    <li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", developer_path(developer), method: :delete%></li>
   <% end %>
-</oll>
+  <p>Add more Developers to this project</p>
+
+  <form action="/jobs/new" method="get">
+      <input type="hidden" name="project_id" value= "<%= @project.id %>">
+      <input type="submit" value="Add Member">
+  </form>
+</ol>
+<% else %>
+  <p>You have no developers working on this project</p>
+  <p>Assign some below</p>
+
+  <form action="/jobs/new" method="get">
+      <input type="hidden" name="project_id" value= "<%= @project.id %>">
+      <input type="submit" value="Add Member">
+  </form>
 <% end %>
 
-<%= link_to "build team", new_team_path %> for this project
+<p><%= button_to "delete this project", project_path(@project), method: :delete %></p>
+
+
+<%= link_to "all your projects", projects_path %>

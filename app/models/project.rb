@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
   validates :name, presence: true
 
-  has_many :teams
-  has_many :developers, through: :teams
+  has_many :jobs
+  has_many :developers, through: :jobs
   belongs_to :user
 end
