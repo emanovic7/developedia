@@ -17,3 +17,56 @@
   margin: 5px auto;
   overflow-y: scroll;
 }
+
+.main2 {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.gradient {
+  background-image: linear-gradient(to bottom right, purple, yellow);
+  height: 700px;
+  width: 50%;
+  background-color: green;
+  border: 1px solid white;
+}
+
+.picture {
+  background-image: url(https://i.pinimg.com/originals/e2/a1/71/e2a171ac91a1435c76a839b1510473c5.gif),
+  url(https://data.whicdn.com/images/202020054/original.gif);
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  height: 700px;
+  width: 50%;
+  background-color: pink;
+  background-size: cover;
+}
+
+.loginbox_root {
+  background-color: purple;
+  padding: 70px 50px;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  margin: 180px auto 100px;
+  border: 1px solid white;
+  border-radius: 25px;
+  text-shadow: 2px 2px 8px #FF0000;
+}
+
+h1, h3 {
+  color: white;
+}
+
+.loginbox_register {
+  background-color: purple;
+  padding: 5px 50px;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  margin: 180px auto 100px;
+  border: 2px solid white;
+  border-radius: 25px;
+  text-shadow: 2px 2px 8px #FF0000;
+}

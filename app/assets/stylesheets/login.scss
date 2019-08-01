@@ -17,7 +17,7 @@ color: white;
 }
 
 .gradient {
-  background-image: linear-gradient(to bottom right, purple, yellow);
+  background-image: linear-gradient(to bottom right, purple, black);
   height: 700px;
   width: 50%;
   background-color: green;
@@ -34,11 +34,14 @@ color: white;
   background-size: cover;
 }
 
-.loginbox {
+.loginbox_login {
   background-color: purple;
   padding: 10px;
-  height: 400px;
+  height: 300px;
   width: 300px;
   text-align: center;
-  margin: 100px auto 100px;
+  border: 2px solid white;
+  border-radius: 25px;
+  text-shadow: 2px 2px 8px #FF0000;
+  margin: 180px auto 100px;
 }
