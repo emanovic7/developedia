@@ -4,6 +4,6 @@
 <%= form_for @job do |f| %>
   <%= f.label :developer %>
   <%= f.collection_select :developer_id, @developers, :id, :name %><br />
-  <input type="hidden" name="project_id" value= "<%= @project.id %>">
+  <%= f.hidden_field :project_id, value: @project.id %>
   <%= f.submit "add developer" %>
 <% end %>

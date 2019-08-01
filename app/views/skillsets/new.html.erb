@@ -1,11 +1,9 @@
 
+<h2 align="center">Add Skill to <%= @developer.name %></h2>
 
 <%= form_for @skillset do |f| %>
-  <%= f.hidden_field :developer, @developer.id %>
-
-  <%= f.label :skill %>
-  <%= f.collection_select :skill_id,  @skills, :id, :name %><br />
-
-
-  <%= f.submit %>
+  <%= f.label :select %>
+  <%= f.collection_select :skill_id, @skills, :id, :name %><br />
+  <%= f.hidden_field :developer_id, value: @developer.id %>
+  <%= f.submit "add skill" %>
 <% end %>

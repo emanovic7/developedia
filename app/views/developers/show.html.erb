@@ -15,6 +15,18 @@
     <h3><%= @developer.location %></h3>
     <img src="<%= @developer.img_url %>" alt="">
 
+    <h3>Skills</h3>
+      <ul>
+        <% @developer.skillsets.each do |skillset| %>
+          <li><%= skillset.skill.name %></li>
+        <% end %>
+      </ul>
+
+    <form action="/skillsets/new" method="get">
+        <input type="hidden" name="developer_id" value= "<%= @developer.id %>">
+        <input type="submit" value="Add Skill">
+    </form>
+
     <%= button_to "Delete", developer_path(@developer), method: :delete %>
 
     <p><%= link_to "back", developers_path %></p>

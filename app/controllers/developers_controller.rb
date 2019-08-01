@@ -3,6 +3,7 @@ class DevelopersController < ApplicationController
 
 
   def index
+    @skills = Skill.all
     @developers = Developer.all
   end
 
@@ -51,6 +52,6 @@ class DevelopersController < ApplicationController
     end
 
     def developer_params
-      params.require(:developer).permit(:name, :img_url, :location)
+      params.require(:developer).permit(:name, :img_url, :location, :language)
     end
 end
