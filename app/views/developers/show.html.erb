@@ -12,11 +12,13 @@
     <div class="box">
 
     <h1><%= @developer.name %></h1>
-
     <h3><%= @developer.location %></h3>
     <img src="<%= @developer.img_url %>" alt="">
 
     <%= button_to "Delete", developer_path(@developer), method: :delete %>
+
+    <p><%= link_to "back", developers_path %></p>
+    <p><%= link_to "home", user_path(@current_user) %></p>
 
     </div>
   </div>
