@@ -1,0 +1,9 @@
+<h1 align="center">Add Review</h1>
+
+
+<%= form_for @review do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %><br />
+  
+  <%= f.submit "add review" %>
+<% end %>

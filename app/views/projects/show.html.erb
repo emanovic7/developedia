@@ -19,8 +19,8 @@
         <% @project.developers.each do |developer| %>
 
           <div class="grid-item">
-          <button type="button" class="btn btn-outline-warning"><li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></li></button><br><br>
-
+          <button type="button" class="btn btn-outline-warning"><li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></li></button><br>
+          <%= link_to "review developer", new_review_path %>
           <img src="<%= developer.img_url %>" alt="">
           <div>
         <% end %>
