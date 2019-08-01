@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 
 <html lang="en">
@@ -15,10 +16,12 @@
 
 <p> Owned by: <%= link_to @project.user.name, user_path(@project.user) %></p>
 
+
 <% if @project.developers.count != 0 %>
   <h3>Developers working on this Project:</h3>
   <div class="grid-container">
   <% @project.developers.each do |developer| %>
+
     <div class="grid-item">
     <button type="button" class="btn btn-outline-warning"><%= link_to developer.name, developer_path(developer) %></button><br><br>
     <img src="<%= developer.img_url %>" alt="">
@@ -27,9 +30,32 @@
   <div>
 <% end %>
 
-<button type="button" class="btn btn-outline-warning"><%= link_to "Add Developer", new_team_path %></button><br><br>
 
 </div>
 </div>
 </body>
 </html>
+
+    <li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", developer_path(developer), method: :delete%></li>
+  <% end %>
+  <p>Add more Developers to this project</p>
+
+  <form action="/jobs/new" method="get">
+      <input type="hidden" name="project_id" value= "<%= @project.id %>">
+      <input type="submit" value="Add Member">
+  </form>
+</ol>
+<% else %>
+  <p>You have no developers working on this project</p>
+  <p>Assign some below</p>
+
+  <form action="/jobs/new" method="get">
+      <input type="hidden" name="project_id" value= "<%= @project.id %>">
+      <input type="submit" value="Add Member">
+  </form>
+<% end %>
+
+<p><%= button_to "delete this project", project_path(@project), method: :delete %></p>
+
+
+<%= link_to "all your projects", projects_path %>
