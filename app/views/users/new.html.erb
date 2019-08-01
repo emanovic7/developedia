@@ -1,4 +1,42 @@
-<h1 align="center">Register</h1>
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |err_msg| %>
+        <li><%= err_msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="main">
+    <div class="gradient">
+      <div class="loginbox_register">
+
+  <%= form_for @user do |f| %>
+    <h5><%= f.label :name %></h5>
+    <%= f.text_field :name %><br />
+
+    <h5><%= f.label :password %></h5>
+    <%= f.password_field :password %><br />
+
+    <h5><%= f.label :password_confirmation %></h5>
+    <%= f.password_field :password_confirmation %><br />
+    <button type="button" class="btn btn-outline-warning"><%= f.submit %></button>
+  <% end %>
+</div>
+</div>
+<div class="picture"></div>
+</div>
 
 
-<%= render "form" %>
+</body>
+</html>

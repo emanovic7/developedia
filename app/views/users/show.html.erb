@@ -16,16 +16,19 @@
         <p>You have no projects with us at the moment</p>
       <% else %>
         <h3>These are the projects you have so far</h3>
+        <br>
           <% @user.projects.each do |project| %>
             <button type="button" class="btn btn-outline-warning"><%= link_to project.name, project_path(project) %></button><br><br>
           <% end %>
       <% end %>
 
-    <button type="button" class="btn btn-secondary btn-sm"><%= link_to "Create a Project", new_project_path %></button><br>
+    <button type="button" class="btn btn-warning"><%= link_to "Create a Project", new_project_path %></button><br>
     <br>
-    <button type="button" class="btn btn-secondary btn-sm"><%= link_to "See all Developers", developers_path %></button><br>
-
-    <p><%= button_to "logout", "/logout", method: :delete %></p>
+    <button type="button" class="btn btn-warning"><%= link_to "See all Developers", developers_path %></button><br>
+    <br>
+    <button type="button" class="btn btn-warning"><%= link_to "See all Project", projects_path %></button><br>
+    <br>
+    <button type="button" class="btn btn-warning"><%= button_to "logout", "/logout", method: :delete %></button><br>
 </div>
 </div>
 </body>

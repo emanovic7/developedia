@@ -8,6 +8,12 @@
   filter: blur();
 }
 
+.main2 {
+  background-color: grey;
+  height: 824px;
+  width: 999px;
+}
+
 .box {
   background-color: grey;
   padding: 5px;
@@ -18,6 +24,26 @@
   overflow-y: scroll;
 }
 
-.grid-item {
-  border-color: white;
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 300px 300px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.box_project_show_header {
+text-align: center;
+// color: white;
+}
+
+.box_new_project {
+  background-color: grey;
+  padding: 5px;
+  height: 680px;
+  width: 300px;
+  text-align: center;
+  margin: 0px auto;
+  overflow-y: scroll;
+  padding-top: 300px;
 }

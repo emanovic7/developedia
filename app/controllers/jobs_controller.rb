@@ -8,7 +8,6 @@ class JobsController < ApplicationController
   def new
     @developers = Developer.all
     @job = Job.new
-    @project = Project.find(params[:project_id])
   end
 
   def create
