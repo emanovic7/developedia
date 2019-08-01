@@ -17,7 +17,9 @@
 <button type="button" class="btn btn-outline-warning"><%= link_to project.name, project %></button><br><br>
 <% end %>
   <p align="center"><%= link_to "add another project", new_project_path %></p>
-  
+
+  <%= link_to "HOME", user_path(@current_user) %>
+
 </div>
 </div>
 </body>

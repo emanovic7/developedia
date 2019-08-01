@@ -5,22 +5,18 @@ class SkillsetsController < ApplicationController
           @skillsets = Skillset.all
         end
 
-        def show
-        end
-
         def new
           @skills = Skill.all
           @skillset = Skillset.new
+          @developer = Developer.find(params[:developer_id])
         end
 
         def create
-          @skillset = @developer.skillsets.create(skillset_params)
-          if @skillset.valid?
-            redirect_to skillset_path
-          else
-            flash[:errors] = @skillset.errors.full_messages
-            redirect_to new_skillset_path
-          end
+          #byebug
+          @developer = Developer.find(skillset_params[:developer_id])
+          @skillset = @developer.skillsets.create(developer_id: @developer.id, skill_id: skillset_params["skill_id"] )
+
+          redirect_to developer_path(@developer)
         end
 
         def edit

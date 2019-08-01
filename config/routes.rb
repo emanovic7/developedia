@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "/login", to: 'login#create'
   delete "/logout", to: 'login#destroy'
   get "/register", to: 'users#new', as: "register"
+  delete '/remove_developer/:developer_id/:project_id', to: 'projects#remove_developer', as: :remove_developer
 
   resources :skillsets
   resources :jobs

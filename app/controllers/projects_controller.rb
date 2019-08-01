@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
       end
 
       def edit
-        
+
       end
 
       def update
@@ -47,6 +47,14 @@ class ProjectsController < ApplicationController
       def destroy
         @project.destroy
         redirect_to projects_path
+      end
+
+      def remove_developer
+        @project = Project.find(params[:project_id])
+        @developer = Developer.find(params[:developer_id])
+        @project.developers.delete(@developer)
+
+        redirect_to project_path(@project)
       end
 
 
