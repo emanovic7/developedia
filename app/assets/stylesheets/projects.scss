@@ -8,6 +8,12 @@
   filter: blur();
 }
 
+.main2 {
+  background-color: grey;
+  height: 824px;
+  width: 999px;
+}
+
 .box {
   background-color: grey;
   padding: 5px;
@@ -18,6 +24,19 @@
   overflow-y: scroll;
 }
 
-.grid-item {
-  border-color: white;
+.box-project-show {
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 300px 300px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.box-project-show-header {
+text-align: center;
+// color: white;
 }
