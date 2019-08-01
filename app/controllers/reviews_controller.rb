@@ -10,23 +10,16 @@ class ReviewsController < ApplicationController
 
       def new
         @review = Review.new
-
+        @user = User.find(params[:user_id])
+        @developer = Developer.find(params[:developer_id])
       end
 
       def create
-        if @current_user
-          @review = @current_user.reviews.create(review_params)
+        @user = User.find(review_params[:user_id])
+        @developer = Developer.find(review_params[:developer_id])
+        @review = Review.create(user_id: review_params[:user_id], developer_id: review_params[:developer_id])
 
-          if @review.valid?
-            redirect_to review_path(@review)
-          else
-            flash[:errors] = @review.errors.full_messages
-            redirect_to new_review_path
-          end
-        else
-          flash["message"] = "Please create account first"
-          redirect_to new_login_path
-        end
+        redirect_to developer_path(@developer)
       end
 
       def edit
@@ -55,6 +48,6 @@ class ReviewsController < ApplicationController
       end
 
       def review_params
-        params.require(:review).permit(:name, :user_id)
+        params.require(:review).permit(:content, :user_id, :developer_id)
       end
 end

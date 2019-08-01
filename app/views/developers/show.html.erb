@@ -27,6 +27,14 @@
         <input type="submit" value="Add Skill">
     </form>
 
+    <h3>Reviews</h3>
+      <ul>
+        <% @developer.reviews.each do |review| %>
+          <li><%= review.content %></li>
+        <% end %>
+      </ul>
+
+
     <%= button_to "Delete", developer_path(@developer), method: :delete %>
 
     <p><%= link_to "back", developers_path %></p>
