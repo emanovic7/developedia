@@ -1,10 +1,24 @@
-<h1>Name: <%= @developer.name %></h1>
+<!doctype html>
 
-<h3>Location: <%= @developer.location %></h3>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-<h3>Skills</h3>
+<body>
+  <div class="main">
+    <div class="box">
 
-<p><%= link_to "add skill", new_skillset_path %></p>
+    <h1><%= @developer.name %></h1>
 
+    <h3><%= @developer.location %></h3>
+    <img src="<%= @developer.img_url %>" alt="">
 
-<p><%= link_to "home", user_path(@current_user) %></p>
+    <%= button_to "Delete", developer_path(@developer), method: :delete %>
+
+    </div>
+  </div>
+</body>
+</html>
