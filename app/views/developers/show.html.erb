@@ -22,8 +22,6 @@
         <% end %>
       </ul>
 
-      <p>Total Skills: <%= @developer.total_skills%></p>
-
     <form action="/skillsets/new" method="get">
         <input type="hidden" name="developer_id" value= "<%= @developer.id %>">
         <input type="submit" value="Add Skill">
