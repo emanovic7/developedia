@@ -1,9 +1,13 @@
-<h1 align="center">Add Review</h1>
+<h2 align="center">review <%= @developer.name %></h2>
 
 
 <%= form_for @review do |f| %>
   <%= f.label :content %>
   <%= f.text_field :content %><br />
-  
+  <%= f.label :rating %>
+  <%= f.number_field :rating %><br />
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.hidden_field :developer_id, value: @developer.id %>
+
   <%= f.submit "add review" %>
 <% end %>
