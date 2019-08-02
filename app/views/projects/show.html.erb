@@ -8,6 +8,31 @@
 </head>
 
 <body>
+
+  <ul class='test'>
+    <div class="navbar">
+    <div class="">
+    <li>
+      <%= link_to "All Developers", developers_path%>
+    </li>
+    <li>
+      <%= link_to "All Projects", projects_path %>
+    </li>
+    <li>
+      <%= link_to "All Skills", skills_path%>
+    </li>
+    <li>
+      <%= link_to "Create a Project", new_project_path %>
+    </li>
+      </div>
+      <div class="">
+    <li>
+      <%= button_to "logout", "/logout", method: :delete %>
+    </li>
+  </div>
+  </div>
+  </ul>
+
   <div class="main">
     <div class="box">
     <h1><%= @project.name %></h1>
@@ -25,7 +50,7 @@
 
           <div class="grid-item">
 
-          <button type="button" class="btn btn-outline-warning"><li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></li></button><br><br>
+          <button type="button" class="btn btn-outline-warning"><%= link_to developer.name, developer_path(developer) %></button> <button type="button" class="btn btn-outline-warning"><%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></button><br><br>
 
 
           <form action="/reviews/new" method="get">
@@ -39,10 +64,12 @@
           <div>
         <% end %>
 
-        <form action="/jobs/new" method="get">
+        <button type="button" class="btn btn-warning">
+          <form action="/jobs/new" method="get">
             <input type="hidden" name="project_id" value= "<%= @project.id %>">
             <input type="submit" value="Add More Developers">
         </form>
+        </button>
     <% else %>
           <p>You have no developers working on this project</p>
 
@@ -56,9 +83,9 @@
   </div>
 </body>
 </html>
+<br>
 
+<button type="button" class="btn btn-warning"><%= button_to "Delete this project", project_path(@project), method: :delete %></button><br>
+<br>
 
-<p><%= button_to "delete this project", project_path(@project), method: :delete %></p>
-
-
-<%= link_to "all your projects", projects_path %>
+<button type="button" class="btn btn-warning"><%= link_to "All your projects", projects_path %></button><br>

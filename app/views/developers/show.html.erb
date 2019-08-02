@@ -10,6 +10,8 @@
 <body>
 
   <ul class='test'>
+    <div class="navbar">
+    <div class="">
     <li>
       <%= link_to "All Developers", developers_path%>
     </li>
@@ -22,9 +24,13 @@
     <li>
       <%= link_to "Create a Project", new_project_path %>
     </li>
+      </div>
+      <div class="">
     <li>
       <%= button_to "logout", "/logout", method: :delete %>
     </li>
+  </div>
+  </div>
   </ul>
   
   <div class="main">
@@ -34,19 +40,26 @@
     <h3><%= @developer.location %></h3>
     <img src="<%= @developer.img_url %>" alt="">
 
+<<<<<<< HEAD
     <h3>Languages</h3>
       <ul>
+=======
+    <h3>Skills</h3>
+
+>>>>>>> 5e617930472ce534b03537fd8298e471044a7dab
         <% @developer.skillsets.each do |skillset| %>
-          <li><%= skillset.skill.name %></li>
+          <span class="badge badge-secondary"><%= skillset.skill.name %></span><br>
         <% end %>
-      </ul>
 
-      <p>Total Skills: <%= @developer.total_skills%></p>
 
-    <form action="/skillsets/new" method="get">
+    <p>Total Skills: <%= @developer.total_skills%></p>
+
+    <button type="button" class="btn btn-warning">
+      <form action="/skillsets/new" method="get">
         <input type="hidden" name="developer_id" value= "<%= @developer.id %>">
         <input type="submit" value="Add Skill">
     </form>
+    </button>
 
     <h3>Reviews</h3>
       <ul>
@@ -60,10 +73,9 @@
       <% end %>
 
 
-    <%= button_to "Delete", developer_path(@developer), method: :delete %>
+    <button type="button" class="btn btn-warning"><%= button_to "Delete this Developer", developer_path(@developer), method: :delete %></button>
 
-    <p><%= link_to "back", developers_path %></p>
-    <p><%= link_to "home", user_path(@current_user) %></p>
+
 
     </div>
   </div>

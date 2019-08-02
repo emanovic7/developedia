@@ -7,8 +7,10 @@
 </head>
 
 <body>
-  
+
   <ul class='test'>
+    <div class="navbar">
+    <div class="">
     <li>
       <%= link_to "All Developers", developers_path%>
     </li>
@@ -21,9 +23,13 @@
     <li>
       <%= link_to "Create a Project", new_project_path %>
     </li>
+      </div>
+      <div class="">
     <li>
       <%= button_to "logout", "/logout", method: :delete %>
     </li>
+  </div>
+  </div>
   </ul>
 
 <div class="main">
