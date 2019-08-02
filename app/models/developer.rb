@@ -19,9 +19,26 @@ class Developer < ApplicationRecord
     self.skills.map do |skill|
       sum_skills += skill.level
     end
-
     return sum_skills
   end
+
+  def developer_cost
+    dev_cost = 0
+    if self.total_skills.between?(0,10)
+      dev_cost = 25
+    elsif self.total_skills.between?(10,15)
+      dev_cost = 35
+    elsif self.total_skills.between?(15,20)
+      dev_cost = 40
+    elsif self.total_skills.between?(20,30)
+      dev_cost = 50
+    elsif self.total_skills.between > 30
+      dev_cost = 70
+    end
+    return dev_cost
+  end
+
+
 
 
 end

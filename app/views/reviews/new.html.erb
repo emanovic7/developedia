@@ -8,9 +8,9 @@
 <% end %>
 
 <%= form_for @review do |f| %>
-  <%= f.label :content %>
-  <%= f.text_field :content %><br />
-  <%= f.label :rating %>
+  <%= f.label :content %><br />
+  <%= f.text_area :content %><br />
+  <%= f.label :rating %><br />
   <%= f.number_field :rating %><br />
   <%= f.hidden_field :user_id, value: @user.id %>
   <%= f.hidden_field :developer_id, value: @developer.id %>

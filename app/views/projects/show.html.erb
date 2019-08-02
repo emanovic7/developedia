@@ -13,6 +13,10 @@
     <h1><%= @project.name %></h1>
     <h3><%= @project.project_length%></h3>
 
+    <% if @project.developers.count != 0  %>
+      <p>Project Cost: $<%= @project.project_cost %></p>
+    <% end %>
+
 
     <% if @project.developers.count != 0 %>
       <h3>Developers working on this Project:</h3>
@@ -23,7 +27,7 @@
 
           <button type="button" class="btn btn-outline-warning"><li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></li></button><br><br>
 
-          
+
           <form action="/reviews/new" method="get">
               <input type="hidden" name="developer_id" value= "<%= developer.id %>">
               <input type="hidden" name="user_id" value= "<%= @current_user.id %>">
