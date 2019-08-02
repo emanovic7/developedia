@@ -8,8 +8,27 @@
 </head>
 
 <body>
+
+  <ul class='test'>
+    <li>
+      <%= link_to "All Developers", developers_path%>
+    </li>
+    <li>
+      <%= link_to "All Projects", projects_path %>
+    </li>
+    <li>
+      <%= link_to "All Skills", skills_path%>
+    </li>
+    <li>
+      <%= link_to "Create a Project", new_project_path %>
+    </li>
+    <li>
+      <%= button_to "logout", "/logout", method: :delete %>
+    </li>
+  </ul>
+
   <div class="main">
-    <div class="box">
+    <div class="box_project_show">
     <h1><%= @project.name %></h1>
     <h3><%= @project.project_length%></h3>
 
@@ -21,9 +40,9 @@
 
           <div class="grid-item">
 
-          <button type="button" class="btn btn-outline-warning"><li><%= link_to developer.name, developer_path(developer) %> - <%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></li></button><br><br>
+          <button type="button" class="btn btn-outline-warning"><%= link_to developer.name, developer_path(developer) %> <%= link_to "remove", remove_developer_path(developer, @project), method: :delete%></button><br><br>
 
-          
+
           <form action="/reviews/new" method="get">
               <input type="hidden" name="developer_id" value= "<%= developer.id %>">
               <input type="hidden" name="user_id" value= "<%= @current_user.id %>">

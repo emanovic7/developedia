@@ -57,13 +57,6 @@ ActiveRecord::Schema.define(version: 2019_08_01_212836) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", force: :cascade do |t|
-    t.integer "project_id"
-    t.integer "developer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
