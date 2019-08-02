@@ -13,4 +13,15 @@ class Developer < ApplicationRecord
     end
     return total_ratings/ self.reviews.length
   end
+
+  def total_skills
+    sum_skills = 0
+    self.skills.map do |skill|
+      sum_skills += skill.level
+    end
+
+    return sum_skills
+  end
+
+
 end

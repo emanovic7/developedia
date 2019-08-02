@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+Developer.destroy_all
+Skill.destroy_all
 
 20.times do
   Developer.create(name: Faker::Name.name, location: Faker::WorldCup.city)
@@ -27,7 +28,7 @@ end
   "SQL",
   "swift"
 ].each do |language|
-  Skill.create(name: language)
+  Skill.create(name: language, level: rand(1..10))
 end
 
 puts "done seeding :)"
