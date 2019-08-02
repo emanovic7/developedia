@@ -32,7 +32,7 @@ class Developer < ApplicationRecord
       dev_cost = 40
     elsif self.total_skills.between?(20,30)
       dev_cost = 50
-    elsif self.total_skills.between > 30
+    elsif self.total_skills > 30
       dev_cost = 70
     end
     return dev_cost
