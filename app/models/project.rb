@@ -25,12 +25,4 @@ class Project < ApplicationRecord
     end
   end
 
-  def project_cost
-    sum = 0
-    self.developers.each do |developer|
-      sum += developer.developer_cost
-    end
-    return sum
-  end
-
 end

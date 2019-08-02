@@ -7,6 +7,24 @@
 </head>
 
 <body>
+  
+  <ul class='test'>
+    <li>
+      <%= link_to "All Developers", developers_path%>
+    </li>
+    <li>
+      <%= link_to "All Projects", projects_path %>
+    </li>
+    <li>
+      <%= link_to "All Skills", skills_path%>
+    </li>
+    <li>
+      <%= link_to "Create a Project", new_project_path %>
+    </li>
+    <li>
+      <%= button_to "logout", "/logout", method: :delete %>
+    </li>
+  </ul>
 
 <div class="main">
 <div class="box">

@@ -25,7 +25,7 @@
 }
 
 .grid-container {
-  display: grid;
+  display: inline;
   grid-template-columns: 300px 300px 300px 300px;
   grid-template-rows: 300px 300px;
   grid-column-gap: 20px;
@@ -46,4 +46,43 @@ text-align: center;
   margin: 0px auto;
   overflow-y: scroll;
   padding-top: 300px;
+}
+
+.box_project_show {
+
+  background-color: grey;
+  padding: 5px;
+  height: 680px;
+  width: 400px;
+  text-align: center;
+  margin: 5px auto;
+  overflow-y: scroll;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.test {
+  align-items: center;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
