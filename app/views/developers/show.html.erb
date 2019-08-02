@@ -30,7 +30,7 @@
     <h3>Reviews</h3>
       <ul>
         <% @developer.reviews.each do |review| %>
-          <li><%= review.content %></li>
+          <li><%= review.content %> - <%= review.user.name %></li>
         <% end %>
       </ul>
 
