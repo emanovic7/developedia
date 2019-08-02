@@ -13,6 +13,10 @@
     <h1><%= @project.name %></h1>
     <h3><%= @project.project_length%></h3>
 
+    <% if @project.developers.count != 0  %>
+      <p>Project Cost: $<%= @project.project_cost %></p>
+    <% end %>
+
 
     <% if @project.developers.count != 0 %>
       <h3>Developers working on this Project:</h3>
