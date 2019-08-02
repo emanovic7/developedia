@@ -1,3 +1,92 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main {
+  background-image: url(https://i.pinimg.com/originals/71/3d/75/713d750e34eecdaad099c01138e41a0c.gif);
+  background-size: cover;
+  filter: blur();
+}
+
+.main2 {
+  background-color: grey;
+  height: 824px;
+  width: 999px;
+}
+
+.box {
+  background-color: grey;
+  padding: 5px;
+  height: 680px;
+  width: 300px;
+  text-align: center;
+  margin: 5px auto;
+  overflow-y: scroll;
+}
+
+.grid-container {
+  display: inline;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 300px 300px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.box_project_show_header {
+text-align: center;
+// color: white;
+}
+
+.box_new_project {
+  background-color: grey;
+  padding: 5px;
+  height: 680px;
+  width: 300px;
+  text-align: center;
+  margin: 0px auto;
+  overflow-y: scroll;
+  padding-top: 300px;
+}
+
+.box_project_show {
+
+  background-color: grey;
+  padding: 5px;
+  height: 680px;
+  width: 400px;
+  text-align: center;
+  margin: 5px auto;
+  overflow-y: scroll;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.test {
+  align-items: center;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,19 +1,59 @@
-<h2 align="center">review <%= @developer.name %></h2>
+<!doctype html>
 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-<% if flash[:errors] %>
-  <% flash[:errors].each do |err_msg| %>
-    <%= err_msg %>
-  <% end %>
-<% end %>
+<body>
 
-<%= form_for @review do |f| %>
-  <%= f.label :content %><br />
-  <%= f.text_area :content %><br />
-  <%= f.label :rating %><br />
-  <%= f.number_field :rating %><br />
-  <%= f.hidden_field :user_id, value: @user.id %>
-  <%= f.hidden_field :developer_id, value: @developer.id %>
+  <ul class='test'>
+    <div class="navbar">
+    <div class="">
+    <li>
+      <%= link_to "All Developers", developers_path%>
+    </li>
+    <li>
+      <%= link_to "All Projects", projects_path %>
+    </li>
+    <li>
+      <%= link_to "All Skills", skills_path%>
+    </li>
+    <li>
+      <%= link_to "Create a Project", new_project_path %>
+    </li>
+      </div>
+      <div class="">
+    <li>
+      <%= button_to "logout", "/logout", method: :delete %>
+    </li>
+  </div>
+  </div>
+  </ul>
 
-  <%= f.submit "add review" %>
-<% end %>
+  <div class="main">
+    <div class="box">
+
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |err_msg| %>
+          <%= err_msg %>
+        <% end %>
+      <% end %>
+
+      <%= form_for @review do |f| %>
+        <%= f.label :content %><br />
+        <%= f.text_area :content %><br />
+        <%= f.label :rating %><br />
+        <%= f.number_field :rating %><br />
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.hidden_field :developer_id, value: @developer.id %>
+
+        <%= f.submit "add review" %>
+      <% end %>
+
+    </div>
+  </div>
+</body>
+</html>
