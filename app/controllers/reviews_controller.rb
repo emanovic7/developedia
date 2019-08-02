@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
       def create
         @user = User.find(review_params[:user_id])
         @developer = Developer.find(review_params[:developer_id])
-        @review = Review.create(content: review_params[:content], user_id: review_params[:user_id], developer_id: review_params[:developer_id])
+        @review = Review.create(content: review_params[:content], rating: review_params[:rating], user_id: review_params[:user_id], developer_id: review_params[:developer_id])
 
         redirect_to developer_path(@developer)
       end
@@ -48,6 +48,6 @@ class ReviewsController < ApplicationController
       end
 
       def review_params
-        params.require(:review).permit(:content, :user_id, :developer_id)
+        params.require(:review).permit(:content, :rating, :user_id, :developer_id)
       end
 end

@@ -34,6 +34,10 @@
         <% end %>
       </ul>
 
+      <% if @developer.reviews.length != 0 %>
+        <p>Avg Rating: <%= @developer.avg_rating  %></p>
+      <% end %>
+
 
     <%= button_to "Delete", developer_path(@developer), method: :delete %>
 
